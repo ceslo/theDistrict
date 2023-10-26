@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="index.css" />
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+          crossorigin="anonymous"
+        />
+    
+        <title>The District</title>
+      </head>
+      <body>
+        <div class="container-fluid" id="page_complete">
+          <header class="rounded">
+            <nav
+              class="navbar navbar-expand-md navbar-dark text-uppercase fs-1  "
+            >
+              <div class="container-fluid">
+                <img
+                  src="images_the_district/the_district_brand/logo.png"
+                  alt="the_district_accueil"
+                  tittle="the_district"
+                  class="img-fluid col-2 col-lg-1 navbar-brand"
+                />
+    
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapsedMenu"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex justify-content-lg-center" id="collapsedMenu">
+                <div class="navbar-nav col-lg-10 d-flex justify-content-evenly">
+                  <a class="nav-link text-white" href="index.html">Accueil</a>
+                  <a class="nav-link text-white" href="categories.html"
+                    >Catégories</a
+                  >
+                  <a class="nav-link text-white" href="">Plats</a>
+                  <a class="nav-link text-white" href="contact.html">Contact</a>
+                </div>
+                </div>
+              </div>
+            </nav>
+          </header>
+          <section class="card card-height-20 rounded mx-3" id="search">
+            <img
+              class="card-img"
+              src="images_the_district/Recherche(1).jpg"
+              alt="image_fond_recherche"
+            />
+            <form class="form card-img-overlay fs-4 d-flex align-items-center justify-content-center px-5">
+              <label for="recherche" class="form-label text-white ">
+                Que recherchez vous?</label>
+              <input  class="form-control" type="text" name="recherche" id="recherche"/>
+              
+              <button class=" btn btn-dark" type="submit" >Rechercher</button>
+            </form>
+          </section>

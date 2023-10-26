@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>The District</title>
+  </head>
+  <body>
+    <div class="container-fluid" id="page_complete">
+      <header class="rounded">
+        <nav
+          class="navbar navbar-expand-md navbar-dark text-uppercase fs-1  "
+        >
+          <div class="container-fluid">
+            <img
+              src="images_the_district/the_district_brand/logo.png"
+              alt="the_district_accueil"
+              tittle="the_district"
+              class="img-fluid col-2 col-lg-1 navbar-brand"
+            />
+
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapsedMenu"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex justify-content-lg-center g-4" id="collapsedMenu">
+            <div class="navbar-nav col-lg-10 d-flex justify-content-evenly">
+              <a class="nav-link text-white" href="index.html">Accueil</a>
+              <a class="nav-link text-white" href="categories.html"
+                >Catégories</a
+              >
+              <a class="nav-link text-white" href="">Plats</a>
+              <a class="nav-link text-white" href="contact.html">Contact</a>
+            </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <section class="mx-3 mt-3">
+        <div class="d-flex justify-content-center">
+          <div class="card rounded col-12 col-lg-8">
+            <div class="row">
+              <div class="d-flex col-4 align-items-center">
+                <img
+                  src="images_the_district/christopher-alvarenga-5uYH4yTDp34-unsplash.jpg"
+                  class="img-fluid rounded"
+                  alt="Plat selectionné"
+                />
+              </div>
+              <div class="col-7 col-sm-8">
+                <div class="card-body">
+                  <p class="card-title fs-4">Plat Selectionné</p>
+                  <p class="card-text small">
+                    Description. Lorem ipsum dolor sit amet consectetur. Nec
+                    scelerisque sem nec ullamcorper morbi donec tempus. Vivamus
+                    enim quam nulla diam ut massa aliquet amet ipsum.
+                    Pellentesque non.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-5">
+          <form class="form col-10">
+            <p>
+              <label class="form-label" for="nom_prenom">Nom et Prénom *</label>
+              <input
+                class="form-control"
+                type="text"
+                name="nom_prenom"
+                id="nom_prenom"
+              />
+            </p>
+            <p>
+              <label class="form-label" for="mail">Votre e-mail *</label>
+              <input class="form-control" type="text" name="mail" id="mail" />
+            </p>
+
+            <p>
+              <label class="form-label" for="adresse">Adresse * </label
+              ><input
+                class="form-control"
+                type="text"
+                name="adresse"
+                id="adresse"
+              />
+            </p>
+
+            <div class="row">
+              <p class="col">
+                <label class="form-label" for="CP">Code postal *</label
+                ><input
+                  class="form-control"
+                  type="text"
+                  name="CP"
+                  id="CP"
+                  required
+                />
+              </p>
+              <p class="col">
+                <label class="form-label" for="ville">Ville *</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  name="ville"
+                  id="ville"
+                />
+              </p>
+            </div>
+            <div class="d-flex justify-content-end my-3">
+              <button class="btn btn-outline-dark">Commander</button>
+            </div>
+          </form>
+        </div>
+      </section>
+      <footer class="pb-3">
+        <button class="btn btn-outline-dark">Précédent</button>
+      </footer>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
