@@ -3,12 +3,7 @@ header {
   font-family: "Oleo Script";
   font-style: normal;
 };
-h2 {
-  font-family: "Oleo Script";
-  font-style: normal;
-  font-weight: bold;
-  color:#970747;
-};
+
 #page_complete {
   background-color:#BA9276;
 };
