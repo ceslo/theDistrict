@@ -1,20 +1,23 @@
+#bandeau {
+  background-color: #0c9707;
+};
+
+
 header {
-  background-color: #970747;
+  background-color: #977d07;
   font-family: "Oleo Script";
   font-style: normal;
-}
+};
 
-#page_complete {
-  background-color: #ba9276;
-}
 
-#bandeau {
-  background-color: #970747;
-}
+
+
+
+
 
 .cat {
   transition-duration: 0.5s;
-}
+};
 .cat:hover {
  
   transform:scale(1.1);

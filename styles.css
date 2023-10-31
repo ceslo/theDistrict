@@ -1,0 +1,25 @@
+header {
+  background-color: #970747;
+  font-family: "Oleo Script";
+  font-style: normal;
+}
+
+.parallax {
+  background-image: url("/images_the_district/oscar-nord-hX8ZTvUinQw-unsplash(3).jpg");
+  background-attachment: fixed;
+  background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+#bandeau {
+  background-color: #970747;
+}
+
+.cat {
+  transition-duration: 0.5s;
+}
+.cat:hover {
+   transform:scale(1.1);
+}
