@@ -29,15 +29,19 @@
               class="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapsedMenu"
+              data-bs-target="#menu"
+              aria-controls="menu"
+              aria-expanded="false"
             >
               <span class="navbar-toggler-icon"></span>
             </button>
             <div
               class="collapse navbar-collapse d-flex justify-content-lg-center"
-              id="collapsedMenu"
+              id="menu"
             >
-              <div class="navbar-nav col-lg-10 d-flex justify-content-evenly">
+              <div
+                class="navbar-nav col-lg-10 col d-flex justify-content-evenly"
+              >
                 <a class="nav-link text-white" href="index.html">Accueil</a>
                 <a class="nav-link text-white" href="categories.html"
                   >Catégories</a
@@ -50,12 +54,12 @@
         </nav>
       </header>
 
-      <section class="d-flex justify-content-center mt-5 " id="search">
-        <div class="card col-xl-10 rounded img-fluid">
+      <section class="d-flex justify-content-center mt-5" id="search">
+        <div class="card col-xl-10 col">
           <img
-            class="card-img"
+            class="card-img object-fit-cover"
             src="images_the_district/Capture d’écran du 2023-10-26 14-45-21.png"
-            alt="image_fond_recherche"
+            height="300px"
           />
           <div class="card-img-overlay">
             <div
@@ -87,45 +91,31 @@
                 </div>
               </div>
             </div>
+            <div class="d-flex"></div>
           </div>
         </div>
       </section>
 
-
-
-
-
-
-
-
       <section>
-        <div class="d-flex justify-content-evenly row-xl mt-5">
-          <div class="card rounded col-xl-2">
-            <img
-              class="card-img object-fit-cover"
-              src="images_the_district/cat1.png"
-              alt="Catégorie 1"
-              title="categorie1"
-            />
-            <div
-              class="card-img-overlay d-flex align-items-center justify-content-center"
-            >
-              <h2 class="card-title mark rounded">Catégorie 1</h2>
-            </div>
+        <div class="d-grid gap-md-3 gap-2 d-flex justify-content-evenly col row-xl mt-5">
+          <div class="card rounded cat">
+            <a href="categorie1.html">
+              <img
+                class="card-img img-fluid"
+                src="images_the_district/cat1.png"
+                alt="Catégorie 1"
+                title="categorie1"
+              />
+              <div
+                class="card-img-overlay d-flex align-items-center justify-content-center">
+                <h2 class="mark rounded text-center" style="color: #970747">Catégorie 1</h2>
+              </div>
+            </a>
           </div>
 
-
-
-
-
-
-
-
-
-
-          <div class="card rounded col-xl-2">
+          <div class="card rounded cat">
             <img
-              class="card-img object-fit-cover"
+              class="card-img img-fluid"
               src="images_the_district/cat2.png"
               alt="Catégorie 2"
               title="categorie2"
@@ -133,10 +123,10 @@
             <div
               class="card-img-overlay d-flex align-items-center justify-content-center"
             >
-              <h2 class="card-title mark rounded">Catégorie 2</h2>
+              <h2 class="mark rounded text-center" style="color: #970747">Catégorie 2</h2>
             </div>
           </div>
-          <div class="card rounded col-xl-2 img-fluid">
+          <div class="card rounded cat">
             <img
               class="card-img img-fluid"
               src="images_the_district/cat3.png"
@@ -146,15 +136,19 @@
             <div
               class="card-img-overlay d-flex align-items-center justify-content-center"
             >
-              <h2 class="card-title mark rounded">Catégorie 3</h2>
+              <h2 class="card-title mark rounded text-center" style="color: #970747">
+                Catégorie 3
+              </h2>
             </div>
           </div>
         </div>
 
-        <div class="d-flex justify-content-evenly row mt-4">
-          <div class="card rounded col-xl-2 shadow">
+        <div
+          class="d-grid gap-md-3 gap-2 d-flex justify-content-evenly col row-xl mt-5"
+        >
+          <div class="card rounded cat">
             <img
-              class="card-img"
+              class="card-img img-fluid"
               src="images_the_district/cat4.png"
               alt="Catégorie 4"
               title="categorie4"
@@ -162,37 +156,48 @@
             <div
               class="card-img-overlay d-flex align-items-center justify-content-center"
             >
-              <h2 class="card-title mark rounded">Catégorie 4</h2>
+              <h2 class="card-title mark rounded text-center" style="color: #970747">
+                Catégorie 4
+              </h2>
             </div>
           </div>
-          <div class="card rounded col-xl-2">
+          <div class="card rounded cat">
             <img
-              class="card-img"
+              class="card-img img-fluid"
               src="images_the_district/cat5.png"
-              alt="Catégorie 1"
-              title="categorie1"
+              alt="Catégorie 5"
+              title="categorie5"
             />
             <div
               class="card-img-overlay d-flex align-items-center justify-content-center"
             >
-              <h2 class="card-title mark rounded">Catégorie 5</h2>
+              <h2 class="card-title mark rounded text-center" style="color: #970747">
+                Catégorie 5
+              </h2>
             </div>
           </div>
-          <div class="card rounded col-xl-2">
+
+          <div class="card rounded cat">
             <img
-              class="card-img object-fit-cover"
+              class="card-img img-fluid"
               src="images_the_district/cat6.png"
-              alt="Catégorie 1"
-              title="categorie1"
+              alt="Catégorie 6"
+              title="categorie6"
             />
             <div
               class="card-img-overlay d-flex align-items-center justify-content-center"
             >
-              <h2 class="card-title mark rounded">Catégorie 6</h2>
+              <h2 class="card-title mark rounded text-center" style="color: #970747">
+                Catégorie 6
+              </h2>
             </div>
           </div>
         </div>
+        <div class="m-md-5 p-md-5 m-2 p-2">
+          <a class="btn btn-outline-dark" href="index.html">Précédent</a>
+        </div>
       </section>
+
       <footer class="p-4 d-flex justify-content-evenly">
         <button class="btn btn-outline-primary" href="#">
           <svg

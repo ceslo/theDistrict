@@ -2,12 +2,20 @@ header {
   background-color: #970747;
   font-family: "Oleo Script";
   font-style: normal;
-};
+}
 
 #page_complete {
-  background-color:#BA9276;
-};
-  
-#bandeau {background-color: #970747;
+  background-color: #ba9276;
+}
 
+#bandeau {
+  background-color: #970747;
+}
+
+.cat {
+  transition-duration: 0.5s;
+}
+.cat:hover {
+ 
+  transform:scale(1.1);
 };
