@@ -5,11 +5,12 @@ header {
 }
 
 .parallax {
-  background-image: url("/images_the_district/oscar-nord-hX8ZTvUinQw-unsplash(3).jpg");
+  background-image: url("images_the_district/oscar-nord-hX8ZTvUinQw-unsplash(3).jpg");
   background-attachment: fixed;
   background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
+
 
 }
 
