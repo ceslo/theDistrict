@@ -3,28 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <title>The District</title>
   </head>
   <body>
-    <div class="container-fluid bg-warning-subtle" id="page_complete">
+    <div class="container-fluid">
       <header class="rounded">
         <nav class="navbar navbar-expand-md navbar-dark text-uppercase fs-1">
           <div class="container-fluid">
             <img
-              src="images_the_district/the_district_brand/logo.png"
+              src="assets/images_the_district/the_district_brand/logo.png"
               alt="the_district_accueil"
               tittle="the_district"
               class="img-fluid col-2 col-lg-1 navbar-brand"
             />
-
             <button
               class="navbar-toggler"
               type="button"
@@ -34,7 +32,7 @@
               <span class="navbar-toggler-icon"></span>
             </button>
             <div
-              class="collapse navbar-collapse d-flex justify-content-lg-center"
+              class="collapse navbar-collapse d-flex justify-content-lg-center g-4"
               id="collapsedMenu"
             >
               <div class="navbar-nav col-lg-10 d-flex justify-content-evenly">
@@ -42,7 +40,7 @@
                 <a class="nav-link text-white" href="categories.html"
                   >Catégories</a
                 >
-                <a class="nav-link text-white" href="">Plats</a>
+                <a class="nav-link text-white" href="plats.html">Plats</a>
                 <a class="nav-link text-white" href="contact.html">Contact</a>
               </div>
             </div>
@@ -50,19 +48,15 @@
         </nav>
       </header>
 
-      <section class="d-flex justify-content-center mt-5 " id="search">
+      <section class="d-flex justify-content-center mt-5" id="search">
         <div class="card col-xl-10 rounded img-fluid">
           <img
             class="card-img"
-            src="images_the_district/Capture d’écran du 2023-10-26 14-45-21.png"
+            src="assets/images_the_district/Capture d’écran du 2023-10-26 14-45-21.png"
             alt="image_fond_recherche"
           />
           <div class="card-img-overlay">
-            <div
-              class="p-4 mt-5 bg-opacity-75 rounded"
-              style="background-color: #970747"
-              id="bandeau"
-            >
+            <div class="p-4 mt-5 rounded" id="bandeau">
               <div class="form-group row d-flex justify-content-center">
                 <div class="col text-end">
                   <label
@@ -90,125 +84,20 @@
           </div>
         </div>
       </section>
+
       <section>
-        <h1 class="mt-5 text-center text-uppercase" style="color:#970747" id="titre_page">
-          Catégorie 1
+        <h1 class="mt-5 text-center text-uppercase" id="titre_page">
+          Les plats
         </h1>
 
-        <div class="row d-flex justify-content-evenly mt-5">
-          <div class="card rounded col-12 col-lg-5">
-            <div class="row">
-              <div class="d-flex col-4 align-items-center">
-                <img
-                  src="images_the_district/christopher-alvarenga-5uYH4yTDp34-unsplash.jpg"
-                  class="img-fluid rounded"
-                  alt="Plat selectionné"
-                />
-              </div>
-              <div class="col-7 col-sm-8">
-                <div class="card-body">
-                  <p class="card-title fs-4">Plat Selectionné</p>
-                  <p class="card-text small">
-                    Description. Lorem ipsum dolor sit amet consectetur. Nec
-                    scelerisque sem nec ullamcorper morbi donec tempus. Vivamus
-                    enim quam nulla diam ut massa aliquet amet ipsum.
-                    Pellentesque non.
-                  </p>
-                  <div class="d-flex justify-content-end my-3">
-                    <a class="btn btn-outline-dark" href="selection_ plat.html">Commander</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card rounded col-12 col-lg-5">
-            <div class="row">
-              <div class="d-flex col-4 align-items-center">
-                <img
-                  src="images_the_district/christopher-alvarenga-5uYH4yTDp34-unsplash.jpg"
-                  class="img-fluid rounded"
-                  alt="Plat selectionné"
-                />
-              </div>
-              <div class="col-7 col-sm-8">
-                <div class="card-body">
-                  <p class="card-title fs-4">Plat Selectionné</p>
-                  <p class="card-text small">
-                    Description. Lorem ipsum dolor sit amet consectetur. Nec
-                    scelerisque sem nec ullamcorper morbi donec tempus. Vivamus
-                    enim quam nulla diam ut massa aliquet amet ipsum.
-                    Pellentesque non.
-                  </p>
-                  <div class="d-flex justify-content-end my-3">
-                    <a class="btn btn-outline-dark">Commander</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row d-flex justify-content-evenly my-5">
-          <div class="card rounded col-12 col-lg-5">
-            <div class="row">
-              <div class="d-flex col-4 align-items-center">
-                <img
-                  src="images_the_district/christopher-alvarenga-5uYH4yTDp34-unsplash.jpg"
-                  class="img-fluid rounded"
-                  alt="Plat selectionné"
-                />
-              </div>
-              <div class="col-7 col-sm-8">
-                <div class="card-body">
-                  <p class="card-title fs-4">Plat Selectionné</p>
-                  <p class="card-text small">
-                    Description. Lorem ipsum dolor sit amet consectetur. Nec
-                    scelerisque sem nec ullamcorper morbi donec tempus. Vivamus
-                    enim quam nulla diam ut massa aliquet amet ipsum.
-                    Pellentesque non.
-                  </p>
-                  <div class="d-flex justify-content-end my-3">
-                    <a class="btn btn-outline-dark">Commander</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card rounded col-12 col-lg-5">
-            <div class="row">
-              <div class="d-flex col-4 align-items-center">
-                <img
-                  src="images_the_district/christopher-alvarenga-5uYH4yTDp34-unsplash.jpg"
-                  class="img-fluid rounded"
-                  alt="Plat selectionné"
-                />
-              </div>
-              <div class="col-7 col-sm-8">
-                <div class="card-body">
-                  <p class="card-title fs-4">Plat Selectionné</p>
-                  <p class="card-text small">
-                    Description. Lorem ipsum dolor sit amet consectetur. Nec
-                    scelerisque sem nec ullamcorper morbi donec tempus. Vivamus
-                    enim quam nulla diam ut massa aliquet amet ipsum.
-                    Pellentesque non.
-                  </p>
-                  <div class="d-flex justify-content-end my-3">
-                    <a class="btn btn-outline-dark">Commander</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div
+          class="row d-flex justify-content-evenly mt-5"
+          id="aff_plats"
+        ></div>
         <div>
-           <a class="btn btn-outline-dark" href="categories.html">Précédent</a>
+          <a class="btn btn-outline-dark" href="categories.html">Précédent</a>
         </div>
       </section>
-
-
-
 
       <footer class="p-4 d-flex justify-content-evenly">
         <button class="btn btn-outline-primary" href="#">
@@ -264,5 +153,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="assets/js/pages.js"></script>
   </body>
 </html>

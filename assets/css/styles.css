@@ -1,18 +1,33 @@
 header {
   background-color: #970747;
-  font-family: "Oleo Script";
   font-style: normal;
 }
 
-.parallax {
-  background-image: url("images_the_district/oscar-nord-hX8ZTvUinQw-unsplash(3).jpg");
-  background-attachment: fixed;
-  background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
+body {
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  background-color:;
+}
 
+/* .par {
+   position: relative;
 
 }
+
+.par :before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("assets/images_the_district/image_parallax.jpg");
+  opacity: 0.7;
+  z-index: -1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+} */
 
 #bandeau {
   background-color: #970747;
@@ -21,6 +36,11 @@ background-size: cover;
 .cat {
   transition-duration: 0.5s;
 }
+
 .cat:hover {
-   transform:scale(1.1);
+  transform: scale(1.1);
+}
+
+h1 {
+  color: #970747
 }
