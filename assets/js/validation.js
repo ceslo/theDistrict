@@ -15,17 +15,17 @@ $(document).ready(function () {
       else {envoi==true}
     });
 
-    // if ($("#traitement_info").is(":not(:checked)")) {
-    //   envoi = false;
-    //   $("#label_info").addClass("text-danger");
-    // };
-    // if ($("#req_nom").val().match(":not(/^[A-Za-z]+$/)")) {
-    //   envoi = false;
-    //   $("#req_nom").addClass("alert alert-danger")
-    //   $(er_small).html("Le nom de doit comporter que des lettres")
-    //   $(er_small).addClass("text-danger mt-0 pt-0 mb-3")
-    //   ;
-    // };
+    if ($("#traitement_info").is(":not(:checked)")) {
+      envoi = false;
+      $("#label_info").addClass("text-danger");
+    };
+    if ($("#req_nom").val().match(":not(/^[A-Za-z]+$/)")) {
+      envoi = false;
+      $("#req_nom").addClass("alert alert-danger")
+      $(er_small).html("Le nom de doit comporter que des lettres")
+      $(er_small).addClass("text-danger mt-0 pt-0 mb-3")
+      ;
+    };
         
     if (envoi == true) {
       $("#contact").submit();
