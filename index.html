@@ -54,10 +54,10 @@
       </header>
       <section
         class="d-flex justify-content-center mt-5"
-        style="height: 500px"
+        style="height:500px"
         id="search"
       >
-        <div class="card col-xl-10">
+        <div class="card col-xl-10 col">
           <video
             class="card-img object-fit-cover"
             src="assets/video/production_id 5102309 (2160p).mp4"
@@ -68,7 +68,7 @@
           <div class="card-img-overlay">
             <div class="p-4 mt-5 bg-opacity-75 rounded" id="bandeau">
               <div class="form-group row d-flex justify-content-center">
-                <div class="col text-end">
+                <div class="search-container col text-end">
                   <label
                     for="recherche"
                     class="form-label text-white text-end fs-4"
@@ -79,10 +79,14 @@
                 <div class="col">
                   <input
                     class="form-control"
-                    type="text"
+                    type="search-input"
                     name="recherche"
                     id="recherche"
                   />
+                  <ul
+                    class="list-group position-absolute"
+                    id="suggestion_liste"
+                  ></ul>
                 </div>
                 <div class="col">
                   <button class="btn btn-outline-light" type="submit">
@@ -151,5 +155,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="assets/js/pages.js"></script>
   </body>
 </html>

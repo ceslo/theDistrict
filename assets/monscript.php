@@ -7,7 +7,12 @@
 </head>
 <body>
     <?php
-    $_REQUEST["name"]
+    $_REQUEST["nom"];
+    $_REQUEST["prenom"];
+    $_REQUEST["email"];
+    $_REQUEST["sujet"];
+    $_REQUEST["question"];
+    $_REQUEST["traitement_info"]
     ?>
 </body>
 </html>

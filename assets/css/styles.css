@@ -5,15 +5,15 @@ header {
 
 body {
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  /* background-color:#f9ce90; */
+  background-color:#f9ce90;
 }
-.par { 
+/* .par { 
   background-image: url("assets/images_the_district/image_parallax.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover; 
-}
+} */
 
 #bandeau {
   background-color: #970747;
@@ -33,5 +33,4 @@ h1 {
 .img_min{ 
   width: 50px;
   height: auto;
-
 }
