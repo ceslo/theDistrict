@@ -1,0 +1,18 @@
+{
+    "name": "sloves/the-district",
+    "description": "test unitaire",
+    "autoload": {
+        "psr-4": {
+            "Sloves\\TheDistrict\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "ceslo",
+            "email": "slovesce@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    }
+}
