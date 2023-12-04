@@ -17,9 +17,9 @@ $.getJSON("assets/js/the_district.json", function (data) {
     });
   });
   $.each(data.plat, function (index, plats) {
-  $("#aff_plats").append('<div class="card rounded col-12 col-lg-5"><div class="row"><div class="d-flex col-4 align-items-center"><img src="assets/images_the_district/food/' +
+  $("#aff_plats").append('<div class="card rounded col-12 col-lg-5 position-relative gy-2"><div class="row"><div class="d-flex col-4 align-items-center"><img src="assets/images_the_district/food/' +
   plats.image +
-  '"class="img-fluid rounded" alt="' +
+  '"class="img-fluid rounded" alt=""' +
   plats.libelle +
   '"/></div><div class="col-7 col-sm-8"><div class="card-body"><p class="card-title fs-4">' +
   plats.libelle +
@@ -31,7 +31,7 @@ $.getJSON("assets/js/the_district.json", function (data) {
     $.each(data.plat, function (index, plats) {
       if (x == plats.id_categorie) {
         $("#aff_cat").append(
-          '<div class="card rounded col-12 col-lg-5"><div class="row"><div class="d-flex col-4 align-items-center"><img src="assets/images_the_district/food/' +
+          '<div class="card rounded col-11 col-lg-5"><div class="row"><div class="d-flex col-4 align-items-center"><img src="assets/images_the_district/food/' +
             plats.image +
             '"class="img-fluid rounded" alt="' +
             plats.libelle +
@@ -44,12 +44,11 @@ $.getJSON("assets/js/the_district.json", function (data) {
       };    
     });
   };
-
   $.each(data.categorie, function (index, cat) {
     $("#aff_cat").append(
       '<button id="btn_' +
         cat.libelle +
-        '" class="card rounded col-2 m-3" ><img class="card-img img-fluid" src="assets/images_the_district/category/' +
+        '" class="card rounded col-3 col-lg-2 m-3" ><img class="card-img img-fluid" src="assets/images_the_district/category/' +
         cat.image+
         '" alt="Catégorie' +
         (index + 1) +

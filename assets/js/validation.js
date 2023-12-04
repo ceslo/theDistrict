@@ -28,14 +28,17 @@ $(document).ready(function () {
     };
         
     if (envoi == true) {
-      $("#contact").submit();
+      $("#contact").submit()
+   
     };
   };
 
  $("#envoyer").click(function (e) {
     e.preventDefault();
     verif();
+    
   });
+
 });
 
 
