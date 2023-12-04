@@ -13,7 +13,7 @@ $.getJSON("assets/js/the_district.json", function (data) {
 
     $.each(result, function (index, plat) {
       $("#suggestion_liste").append(
-        "<li class='list-group-item overflow-visible'> "+plat.libelle+
+        "<li class='list-group-item overflow-visible'><img src='"+plat.image+"'>"+plat.libelle+
           "</li>"
       );
     });
