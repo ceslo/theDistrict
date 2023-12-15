@@ -15,39 +15,9 @@
   </head>
   <body>
     <div class="container-fluid">
-      <header class="rounded">
-        <nav
-          class="navbar navbar-expand-md navbar-dark text-uppercase fs-1  "
-        >
-          <div class="container-fluid">
-            <img
-              src="assets/images_the_district/the_district_brand/logo.png"
-              alt="the_district_accueil"
-              tittle="the_district"
-              class="img-fluid col-2 col-lg-1 navbar-brand"
-            />
-
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapsedMenu"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse d-flex justify-content-lg-center g-4" id="collapsedMenu">
-            <div class="navbar-nav col-lg-10 d-flex justify-content-evenly">
-              <a class="nav-link text-white" href="index.html">Accueil</a>
-              <a class="nav-link text-white" href="categories.html"
-                >Catégories</a
-              >
-              <a class="nav-link text-white" href="plats.html">Plats</a>
-              <a class="nav-link text-white" href="contact.html">Contact</a>
-            </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+    <?php
+     include ("header.php");
+    ?>
 
       <section class="mx-3 my-3">
         <form id="contact" action="assets/monscript.php" method="post">
@@ -116,6 +86,9 @@
       </form>
         </form>
       </section>
+      <?php
+       include ("footer.php")
+      ?>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

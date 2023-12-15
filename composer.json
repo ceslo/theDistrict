@@ -1,6 +1,5 @@
 {
     "name": "sloves/the-district",
-    "description": "test unitaire",
     "autoload": {
         "psr-4": {
             "Sloves\\TheDistrict\\": "src/"
@@ -12,7 +11,7 @@
             "email": "slovesce@gmail.com"
         }
     ],
-    "require-dev": {
-        "phpunit/phpunit": "^10.5"
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
     }
 }

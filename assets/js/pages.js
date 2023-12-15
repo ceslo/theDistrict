@@ -48,7 +48,7 @@ $.getJSON("assets/js/the_district.json", function (data) {
     $("#aff_cat").append(
       '<button id="btn_' +
         cat.libelle +
-        '" class="card rounded col-3 col-lg-2 m-3" ><img class="card-img img-fluid" src="assets/images_the_district/category/' +
+        '" class="cat card rounded col-3 col-lg-2 m-3" ><img class="card-img img-fluid" src="assets/images_the_district/category/' +
         cat.image+
         '" alt="Catégorie' +
         (index + 1) +

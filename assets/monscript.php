@@ -1,20 +1,16 @@
     <?php
-      
-    $_REQUEST["nom"]=$nom;
-    $_REQUEST["prenom"]=$prenom;
-    $_REQUEST["email"]=$email;
-    $_REQUEST["sujet"]=$sujet;
-    $_REQUEST["question"]=$question;
-    $_REQUEST["traitement_info"]=$traitement_info;
+    session_start();  
+    $nom = $_REQUEST["nom"];
+    // $_REQUEST["prenom"]=$prenom;
+    // $_REQUEST["email"]=$email;
+    // $_REQUEST["sujet"]=$sujet;
+    // $_REQUEST["question"]=$question;
+    // $_REQUEST["traitement_info"]=$traitement_info;
 
-    $user[0]=$nom;
-    $user[1]=$prenom;
-    $user[2]=$email;
-    $user[3]=$sujet;
-    $user[4]=$question;   
+    $userFile=fopen("user.txt","w");
+    fputs($userFile,$nom);
 
-    var_dump($user)
-    
+
     // $new_date= new DateTime();
     // $path= $new_date.".text";
     // $puts($path,$user[]);
