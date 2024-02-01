@@ -15,7 +15,9 @@
   <body>
     <div class="container-fluid">
     <?php
-  include ("header.php");
+  require_once("db_connect.php");
+  require_once ("views/header.php");
+  require_once("DAO.php");
   ?>
 
       <section class="d-flex justify-content-center mt-5" id="search">
@@ -65,17 +67,24 @@
           Les plats
         </h1>
 
-        <div
-          class="row d-flex justify-content-evenly mt-5"
-          id="aff_plats"
-        ></div>
+        <div class="row d-flex justify-content-evenly mt-5" id="aff_plats">
+          <div class="card rounded col-12 col-lg-5 position-relative gy-2"><div class="row"><div class="d-flex col-4 align-items-center"><img src="assets/images_the_district/food/' +
+//   plats.image +
+//   '"class="img-fluid rounded" alt=""' +
+//   plats.libelle +
+//   '"/></div><div class="col-7 col-sm-8"><div class="card-body"><p class="card-title fs-4">' +
+//   plats.libelle +
+//   '</p><p class="card-text small">' +
+//   plats.description +
+//   '</p> <div class="d-flex justify-content-end my-3"><a class="btn btn-outline-dark" href="">Commander</a></div></div></div></div></div>')});
+      </div>
         <div>
           <a class="btn btn-outline-dark" href="categories.html">Précédent</a>
         </div>
       </section>
 
       <?php
-      include ("footer.php")
+      include ("views/footer.php")
       ?>
     </div>
     <script

@@ -16,7 +16,7 @@
   <body>
     <div class="par container-fluid">
   <?php
-include ("header.php");
+require_once ("views/header.php");
   ?>
       <section
         class="d-flex justify-content-center mt-5"
@@ -66,7 +66,7 @@ include ("header.php");
         </div>
       </section>
 <?php
-include ("footer.php")
+include ("views/footer.php")
 ?>
     </div>
 
