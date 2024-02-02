@@ -62,24 +62,34 @@
         </div>
       </section>
 
+<!-- Affichage des plats -->
       <section>
-        <h1 class="mt-5 text-center text-uppercase" id="titre_page">
-          Les plats
-        </h1>
-
+        <h1 class="mt-5 text-center text-uppercase" id="titre_page">Les plats</h1>
         <div class="row d-flex justify-content-evenly mt-5" id="aff_plats">
-          <div class="card rounded col-12 col-lg-5 position-relative gy-2"><div class="row"><div class="d-flex col-4 align-items-center"><img src="assets/images_the_district/food/' +
-//   plats.image +
-//   '"class="img-fluid rounded" alt=""' +
-//   plats.libelle +
-//   '"/></div><div class="col-7 col-sm-8"><div class="card-body"><p class="card-title fs-4">' +
-//   plats.libelle +
-//   '</p><p class="card-text small">' +
-//   plats.description +
-//   '</p> <div class="d-flex justify-content-end my-3"><a class="btn btn-outline-dark" href="">Commander</a></div></div></div></div></div>')});
-      </div>
+          <?php 
+          $plats=getPlats($db);
+          foreach ($plats as $plat){?>         
+          <div class="card rounded col-12 col-lg-5 position-relative gy-2">
+            <div class="row">
+              <div class="d-flex col-4 align-items-center">
+                <img src="assets/images_the_district/food/<?=$plat['image']?>"class="img-fluid rounded" alt="<?= $plat['libelle']?>"/>
+              </div>
+              <div class="col-7 col-sm-8">
+                <div class="card-body">
+                  <p class="card-title fs-4"><?=$plat['libelle']?></p>
+                  <p class="card-text small"><?=$plat['description']?></p>
+                  <div class="d-flex justify-content-end my-3">
+                    <a class="btn btn-outline-dark" href="plat_selectionne.php?id=<?=$plat['id']?>">Commander</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php }?>
+        </div>
+        
         <div>
-          <a class="btn btn-outline-dark" href="categories.html">Précédent</a>
+          <a class="btn btn-outline-dark m-3" href="index.php">Précédent</a>
         </div>
       </section>
 

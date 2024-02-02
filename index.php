@@ -17,7 +17,11 @@
     <div class="par container-fluid">
   <?php
 require_once ("views/header.php");
+require_once ("DAO.php");
+require_once ("db_connect.php")
   ?>
+
+  <!-- Affichage de la barre de recherche -->
       <section
         class="d-flex justify-content-center mt-5"
         style="height: 500px"
@@ -65,6 +69,27 @@ require_once ("views/header.php");
           </div>
         </div>
       </section>
+      <?php
+        $categories=sortCategoriesIdByPopularity($db);
+       var_dump($categories);
+       ?>
+      <!-- Affichage des categories populaires -->
+      <!-- <section class="d-flex justify-content-center position-relative">
+    <div
+          id="aff_cat"
+          class="d-flex justify-content-evenly col-xl-10 row flex-wrap mt-5 position-relative"
+        >
+       
+        <a href="details_categorie.php?id=<?=$categorie['id']?>" class="card rounded col-3 col-lg-2 m-3" >
+          <img class="card-img img-fluid" src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/> 
+          <div class="card-img-overlay d-flex align-items-center justify-content-center"> 
+              <h2 class="mark rounded text-center" style="color: #970747"> <?=$categorie['libelle']?> </h2>
+          </div> 
+        </a> 
+        
+        
+        </div>
+      </section> -->
 <?php
 include ("views/footer.php")
 ?>

@@ -7,7 +7,12 @@ function getCategories($db){
     $categories= $query-> fetchAll();
     return $categories;
 }
-
+function getPlats($db){
+    $query= $db-> prepare('SELECT * FROM plat');
+    $query-> execute();
+    $plats= $query-> fetchAll();
+    return $plats;
+};
 function getPlatsbyCategorie($cat,$db){
     $query= $db-> prepare("SELECT * FROM plat WHERE id_categorie=:cat_id");
     $query-> bindParam(':cat_id',$cat,PDO::PARAM_INT);
@@ -26,7 +31,14 @@ function getPlatById($id,$db){
 
 function sortMealsByPopularity($db)
 {
-$query= $db-> prepare("SELECT * FROM plat JOIN commande ON plat.id = commande.id_plat ORDER BY commande.quantite DESC");
+$query= $db-> prepare("SELECT * FROM plat JOIN commande ON plat.id = commande.id_plat ORDER BY commande.quantite DESC LIMIT 3");
+$query-> execute();
+$result=$query->fetchAll();
+return $result;
+};
+function sortCategoriesIdByPopularity($db)
+{
+$query= $db-> prepare("SELECT plat.id_categorie FROM plat JOIN commande ON plat.id = commande.id_plat GROUP BY plat.id_categorie ORDER BY commande.quantite DESC limit 6");
 $query-> execute();
 $result=$query->fetchAll();
 return $result;
