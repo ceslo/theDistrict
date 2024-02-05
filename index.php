@@ -71,19 +71,35 @@ require_once ("db_connect.php")
       </section>
 
     <!-- Affichage categories populaires -->
-      <section>
-
+      <section class="d-flex wrap justify-content-center">
+       
+        <div class="d-flex justify-content-evenly col-xl-10 row mt-5">
+        <h1 class="text-center row mt-5">Catégories populaires</h1>
+     <?php 
+     $categories= sortCategoriesByPopularity($db); 
+    // var_dump($categories);
+     foreach($categories as $categorie){ ?>
+          <a href="categories.php?id=<?=$categorie['id']?>" class="card rounded col-3 col-lg-2 m-3" >
+            <img class="card-img " src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/>
+            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+              <h5 class="mark rounded text-center" style="color=#970747"> <?=$categorie['libelle']?> </h5>
+            </div> 
+          </a>
+      <?php } ?>
+        </div>
       </section>
 
 
       <!-- Affichage plats populaires -->
       <section class="d-flex justify-content-center">
+        
       <div class="d-flex justify-content-evenly col-xl-10 row mt-5">
+      <h1 class="text-center row mt-5">Plats populaires</h1>
       <?php 
       $plats= sortMealsByPopularity($db);
       // var_dump($plats);
       foreach($plats as $plat){?>
-          <a href="plat_selectionne.php?id=<?=$plat['id']?>" class="card rounded col-3 col-lg-2 m-3" >
+          <a href="plat_selectionne.php?id=<?=$plat['id_plat']?>" class="card rounded col-3 col-lg-2 m-3" >
             <img class="card-img " src="assets/images_the_district/food/<?=$plat['image']?>" alt="<?$plat['libelle']?>" title="<?=$plat['libelle']?>"/>
             <div class="card-img-overlay d-flex align-items-center justify-content-center">
               <h5 class="mark rounded text-center" style="color=#970747"> <?=$plat['libelle']?> </h5>

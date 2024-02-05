@@ -16,7 +16,7 @@
   <body>
     <div class="container-fluid">
     <?php
-     include ("header.php");
+     include ("views/header.php");
     ?>
 
       <section class="mx-3 my-3">
@@ -87,7 +87,7 @@
         </form>
       </section>
       <?php
-       include ("footer.php")
+       include ("views/footer.php")
       ?>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

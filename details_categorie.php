@@ -84,7 +84,8 @@
                 <div class="col-7 col-sm-8">
                     <div class="card-body">
                         <p class="card-title fs-4"><?= $plat['libelle']?></p>
-                        <p class="card-text small"><?=$plat['description']?></p> 
+                        <p class="card-text small"><?=$plat['description']?></p>
+                        <p class="card-text small">Prix:<?=$plat['prix']?>€</p>
                             <div class="d-flex justify-content-end my-3">
                                 <a class="btn btn-outline-dark" href="plat_selectionne.php?id=<?= $plat['id']?>">Commander</a>
                             </div>

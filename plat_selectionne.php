@@ -42,6 +42,7 @@
                 <div class="card-body">
                   <p class="card-title fs-4"><?=$plat['libelle']?></p>
                   <p class="card-text small"><?=$plat['description']?></p>
+                  <p class="card-text small">Prix:<?=$plat['prix']?>€</p>
                 </div>
               </div>
             </div>
@@ -50,34 +51,37 @@
 
       <!-- Formulaire de commande -->
         <div class="d-flex justify-content-center mt-5">
-          <form class="form col-10">
+          <form class="form col-10" action="commande_script.php" method="POST">
+            <input type="text" hidden name="id" value="<?=$plat['id']?>" />
             <p>
-              <label class="form-label" for="nom_prenom">Nom et Prénom *</label>
+              <label for="nom_prenom" class="form-label" >Nom et Prénom *</label>
               <input
                 class="form-control"
                 type="text"
                 name="nom_prenom"
                 id="nom_prenom"
+                required
               />
             </p>
             <p>
-              <label class="form-label" for="mail">Votre e-mail *</label>
-              <input class="form-control" type="text" name="mail" id="mail" />
+              <label for="mail" class="form-label">Votre e-mail *</label>
+              <input class="form-control" type="text" name="mail" id="mail" required />
             </p>
 
             <p>
-              <label class="form-label" for="adresse">Adresse * </label
+              <label for="adresse" class="form-label" >Adresse * </label
               ><input
                 class="form-control"
                 type="text"
                 name="adresse"
                 id="adresse"
+                required
               />
             </p>
 
             <div class="row">
               <p class="col">
-                <label class="form-label" for="CP">Code postal *</label
+                <label for="CP" class="form-label">Code postal *</label
                 ><input
                   class="form-control"
                   type="text"
@@ -87,23 +91,24 @@
                 />
               </p>
               <p class="col">
-                <label class="form-label" for="ville">Ville *</label>
+                <label for="ville" class="form-label" >Ville *</label>
                 <input
                   class="form-control"
                   type="text"
                   name="ville"
                   id="ville"
+                  required
                 />
               </p>
             </div>
             <div class="d-flex justify-content-end my-3">
-              <button class="btn btn-outline-dark">Commander</button>
+              <button class="btn btn-outline-dark" type="submit">Passer la commande</button>
             </div>
           </form>
             
         </div>
         <div class="m-5 p-5">
-          <a class="btn btn-outline-dark" href="categorie1.html">Précédent</a>
+          <a class="btn btn-outline-dark" href="plats.php">Précédent</a>
      
         </div>
       </section>

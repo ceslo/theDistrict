@@ -70,7 +70,8 @@
           class="d-flex justify-content-evenly col-xl-10 row flex-wrap mt-5 position-relative"
         >
         <?php
-        $categories=getCategories($db);
+        $categories=getCategoriesActives($db);
+        // var_dump($categories);
         foreach($categories as $categorie)
         { ?>
         <a href="details_categorie.php?id=<?=$categorie['id']?>" class="card rounded col-3 col-lg-2 m-3" >
@@ -80,7 +81,7 @@
           </div> 
         </a> 
         <?php } ?>
-        
+      
         </div>
       </section>
 
