@@ -69,29 +69,32 @@ require_once ("db_connect.php")
           </div>
         </div>
       </section>
-      <?php
-        $categories=sortCategoriesIdByPopularity($db);
-       var_dump($categories);
-       ?>
-      <!-- Affichage des categories populaires -->
-      <!-- <section class="d-flex justify-content-center position-relative">
-    <div
-          id="aff_cat"
-          class="d-flex justify-content-evenly col-xl-10 row flex-wrap mt-5 position-relative"
-        >
-       
-        <a href="details_categorie.php?id=<?=$categorie['id']?>" class="card rounded col-3 col-lg-2 m-3" >
-          <img class="card-img img-fluid" src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/> 
-          <div class="card-img-overlay d-flex align-items-center justify-content-center"> 
-              <h2 class="mark rounded text-center" style="color: #970747"> <?=$categorie['libelle']?> </h2>
-          </div> 
-        </a> 
-        
-        
-        </div>
-      </section> -->
+
+    <!-- Affichage categories populaires -->
+      <section>
+
+      </section>
+
+
+      <!-- Affichage plats populaires -->
+      <section class="d-flex justify-content-center">
+      <div class="d-flex justify-content-evenly col-xl-10 row mt-5">
+      <?php 
+      $plats= sortMealsByPopularity($db);
+      // var_dump($plats);
+      foreach($plats as $plat){?>
+          <a href="plat_selectionne.php?id=<?=$plat['id']?>" class="card rounded col-3 col-lg-2 m-3" >
+            <img class="card-img " src="assets/images_the_district/food/<?=$plat['image']?>" alt="<?$plat['libelle']?>" title="<?=$plat['libelle']?>"/>
+            <div class="card-img-overlay d-flex align-items-center justify-content-center">
+              <h5 class="mark rounded text-center" style="color=#970747"> <?=$plat['libelle']?> </h5>
+            </div> 
+          </a>
+
+      <?php } ?>
+      </div>
+      </section>
 <?php
-include ("views/footer.php")
+require_once ("views/footer.php");
 ?>
     </div>
 

@@ -28,17 +28,24 @@ function getPlatById($id,$db){
     $plat= $query->fetch();
     return $plat;
 };
+function getCategoriesById($id,$db){
+    $query= $db-> prepare("SELECT * FROM categorie WHERE id=:id");
+    $query-> bindParam(':id', $id);
+    $query-> execute();
+    $categories= $query->fetch();
+    return $categories;
+};
 
 function sortMealsByPopularity($db)
 {
-$query= $db-> prepare("SELECT * FROM plat JOIN commande ON plat.id = commande.id_plat ORDER BY commande.quantite DESC LIMIT 3");
+$query= $db-> prepare("SELECT * FROM plat JOIN commande ON plat.id = commande.id_plat GROUP BY plat.id ORDER BY SUM(commande.quantite) DESC LIMIT 3");
 $query-> execute();
 $result=$query->fetchAll();
 return $result;
 };
 function sortCategoriesIdByPopularity($db)
 {
-$query= $db-> prepare("SELECT plat.id_categorie FROM plat JOIN commande ON plat.id = commande.id_plat GROUP BY plat.id_categorie ORDER BY commande.quantite DESC limit 6");
+$query= $db-> prepare("SELECT plat.id_categorie FROM plat JOIN commande ON plat.id = commande.id_plat ORDER BY commande.quantite DESC");
 $query-> execute();
 $result=$query->fetchAll();
 return $result;

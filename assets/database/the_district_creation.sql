@@ -62,5 +62,4 @@ CREATE TABLE `utilisateur` (
   `password` varchar(255) NOT NULL
 ) ;
 
-SELECT plat.libelle , MAX(SUM(commande.total)) FROM plat JOIN commande ON plat.id = commande.id_plat GROUP BY commande.id_plat
 

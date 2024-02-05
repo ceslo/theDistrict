@@ -1,11 +1,11 @@
 <?php 
 $servername = "localhost";
-$username = "admin";
-$password= "Afpa1234";
+$username = "root";
+$password="";
 $dbname= "the_district";
 
 try{
-    $db = new PDO('mysql:host=localhost;charset=utf8;dbname=the_district','admin','Afpa1234');
+    $db = new PDO('mysql:host=localhost;charset=utf8;dbname=the_district','root','');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);}
   
 catch (PDOException $e){
