@@ -27,7 +27,7 @@ require_once ("db_connect.php")
         style="height: 500px"
         id="search"
       >
-        <div class="card col-xl-10 col">
+       <form method="GET" action="" class="card col-xl-10 col">
           <video
             class="card-img object-fit-cover"
             src="assets/video/production_id 5102309 (2160p).mp4"
@@ -49,7 +49,7 @@ require_once ("db_connect.php")
                 <div class="col">
                   <input
                     class="form-control"
-                    type="search-input"
+                    type="search"
                     name="recherche"
                     id="recherche"
                   />
@@ -59,7 +59,7 @@ require_once ("db_connect.php")
                   ></ul>
                 </div>
                 <div class="col">
-                  <button class="btn btn-outline-light" type="submit">
+                  <button class="btn btn-outline-light" type="submit" value="Valider">
                     Rechercher
                   </button>
                 </div>
@@ -67,7 +67,9 @@ require_once ("db_connect.php")
             </div>
             <div class="d-flex"></div>
           </div>
-        </div>
+       </form>
+      <?php $result=search_bar($db);
+       var_dump($result);?>
       </section>
 
     <!-- Affichage categories populaires -->
