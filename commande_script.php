@@ -14,7 +14,7 @@ $plat_commande= getPlatById($id,$db);
 // Récupératoin des informations du client
 $mail_client=$_POST['mail'];
 $nom_prenom= $_POST['nom_prenom'];
-$adresse_client=$_POST['adresse']. $_POST['CP']. $_POST['ville'];
+$adresse_client=$_POST['adresse']." ". $_POST['CP']." ". $_POST['ville'];
 
 // $mail_client= 'client1@exemple.com';
 // $nom_prenom='Mr dudu';
@@ -32,7 +32,7 @@ $mail->addAddress($mail_client, $nom_prenom);
 $mail->isHTML(true);
 $mail->Subject= 'Confimation de votre commande';
 $mail->Body= "Merci pour votre commande! Elle vous sera livrée à l'adresse suivante: ". $adresse_client.
-" Recapitulatif de votre commande: "
+" Récapitulatif de votre commande: "
    . $plat_commande['libelle'] ;
 
 if($mail){

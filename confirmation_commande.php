@@ -22,7 +22,7 @@ require_once ("db_connect.php")
   ?>
 <section class="">
     <h1 class="text-center my-5 d-flex justify-content-center"> Votre commande est confirmée!</h1>
-    <h3> Vous recevrez bientot un e-mail de confirmation </h3>
+    <h3 class="text-center"> Vous recevrez bientôt un e-mail de confirmation </h3>
     <h3></h3>
         <div class="col-6 mx-auto d-flex justify-content-center card rounded">
         <img class="card-img" src="assets/images_the_district/order.jpg" alt="Commande confirmée">

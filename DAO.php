@@ -51,12 +51,10 @@ $result=$query->fetchAll();
 return $result;
 };
 
-function search_bar($db)
-{
-    $keyword=htmlspecialchars($_GET["recherche"]);
-   /** $keyword=$_GET["recherche"];*/
-    $query=$db-> prepare("SELECT libelle FROM plat where libelle LIKE '%.$keyword.%' ");
+function search_bar($keyword, $db)
+{ 
+    $query= $db-> prepare("SELECT * FROM plat where libelle LIKE '%$keyword%' OR description LIKE '%$keyword%'");
     $query-> execute();
-    $result=$query->fetchAll();
+    $result= $query->fetchAll();
     return $result;
 }

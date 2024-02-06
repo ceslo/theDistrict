@@ -18,50 +18,11 @@
   <?php
   require_once("db_connect.php");
   require_once ("views/header.php");
-  require_once("DAO.php")
+  require_once("DAO.php");
+  require_once ("views/search_bar.php");
   ?>
 
-      <section class="d-flex justify-content-center mt-5" id="search">
-        <div class="card col-xl-10 col">
-          <img
-            class="card-img object-fit-cover"
-            src="assets/images_the_district/Capture d’écran du 2023-10-26 14-45-21.png"
-            height="300px"
-          />
-          <div class="card-img-overlay">
-            <div class="p-4 mt-5 bg-opacity-75 rounded" id="bandeau">
-              <div class="form-group row d-flex justify-content-center">
-                <div class="search-container col text-end">
-                  <label
-                    for="recherche"
-                    class="form-label text-white text-end fs-4"
-                  >
-                    Que recherchez vous?</label
-                  >
-                </div>
-                <div class="col">
-                  <input
-                    class="form-control"
-                    type="search-input"
-                    name="recherche"
-                    id="recherche"
-                  />
-                  <ul
-                    class="list-group position-absolute"
-                    id="suggestion_liste"
-                  ></ul>
-                </div>
-                <div class="col">
-                  <button class="btn btn-outline-light" type="submit">
-                    Rechercher
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="d-flex"></div>
-          </div>
-        </div>
-      </section>
+     
 
       <!-- Affichage des categories -->
    <section class="d-flex justify-content-center position-relative">

@@ -16,3 +16,24 @@ $categories=sortCategoriesIdByPopularity($db);
 
             <?php }; }; ?> 
         </div>
+
+
+
+barre de recherche avec GET:
+        <?php
+                  if (isset($_GET["recherche"]) AND $_GET["recherche"])
+                  {
+                    $keyword=$_GET["recherche"];                    
+                    $result=search_bar($keyword,$db);
+                    
+                      if (isset($keyword) AND !empty($keyword))
+                      {
+                        header('location: recherche.php');
+                        foreach ($result as $suggestion)
+                        { ?>                
+                        <li class='list-group-item overflow-visible'>
+                        <img class='img_min' src='assets/images_the_district/food/<?=$suggestion["image"]?>'><?=$suggestion["libelle"]?></li>
+                        <?php 
+                        };
+                      };
+                    }?>        

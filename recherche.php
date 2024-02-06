@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -26,7 +26,7 @@ require_once ("db_connect.php")
         class="d-flex justify-content-center mt-5"
         style="height: 500px"
         id="search">
-       <form method="GET" action="recherche.php" class="card col-xl-10 col">
+       <form method="GET" action="" class="card col-xl-10 col">
           <video
             class="card-img object-fit-cover"
             src="assets/video/production_id 5102309 (2160p).mp4"
@@ -51,19 +51,7 @@ require_once ("db_connect.php")
                     name="recherche"
                     id="recherche"
                   />
-                  <ul
-                    class="list-group position-absolute"
-                    id="suggestion_liste"
-                  >
-                  <?php
-                  if (isset($_GET["recherche"]) && !empty( $_GET["recherche"]))
-                  {
-                    $keyword=$_GET["recherche"];                    
-                    $result=search_bar($keyword,$db);
-                    header('location: recherche.php');                   
-                     
-                    }?> 
-                </ul>
+                  
                 </div>
                 <div class="col">
                   <button class="btn btn-outline-light" type="submit" value="Valider">
@@ -74,47 +62,46 @@ require_once ("db_connect.php")
             </div>
             <div class="d-flex"></div>
           </div>
-                  </form>
+        </form>
       </section>
 
-    <!-- Affichage categories populaires -->
-      <section class="d-flex wrap justify-content-center">       
-        <div class="d-flex justify-content-evenly col-xl-10 row mt-5">
-        <h1 class="text-center row mt-5">Catégories populaires</h1>
-     <?php 
-     $categories= sortCategoriesByPopularity($db); 
-    // var_dump($categories);
-     foreach($categories as $categorie){ ?>
-          <a href="categories.php?id=<?=$categorie['id']?>" class="card rounded col-3 col-lg-2 m-3" >
-            <img class="card-img " src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/>
-            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-              <h5 class="mark rounded text-center" style="color=#970747"> <?=$categorie['libelle']?> </h5>
-            </div> 
-          </a>
-      <?php } ?>
-        </div>
+      <section>
+      <h1 class="mt-5 text-center text-uppercase" id="titre_page">Voici les plats correspondants à votre recherche</h1>
+      <div class="row d-flex justify-content-evenly mt-5" id="aff_suggestions">
+      <?php
+    if (isset($_GET["recherche"]) AND !empty($_GET["recherche"]))
+    {
+        $keyword=$_GET["recherche"];                   
+        $result=search_bar($keyword,$db); 
+        foreach ($result as $suggestion)
+        { ?>
+            <div class="card rounded col-12 col-lg-5 position-relative gy-2">
+            <div class="row">
+              <div class="d-flex col-4 align-items-center">
+                <img src="assets/images_the_district/food/<?=$suggestion['image']?>"class="img-fluid rounded" alt="<?= $suggestion['libelle']?>"/>
+              </div>
+              <div class="col-7 col-sm-8">
+                <div class="card-body">
+                  <p class="card-title fs-4"><?=$suggestion['libelle']?></p>
+                  <p class="card-text small"><?=$suggestion['description']?></p>
+                  <p class="card-text small">Prix:<?=$suggestion['prix']?>€</p>
+                  <div class="d-flex justify-content-end my-3">
+                    <a class="btn btn-outline-dark" href="su$suggestion_selectionne.php?id=<?=$suggestion['id']?>">Commander</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <?php }; 
+    }
+    else 
+    { echo 'Aucun resultat trouvé pour cette recherche';
+    } ; ?>                
+                        
       </section>
 
-
-      <!-- Affichage plats populaires -->
-      <section class="d-flex justify-content-center">
-        
-      <div class="d-flex justify-content-evenly col-xl-10 row mt-5">
-      <h1 class="text-center row mt-5">Plats populaires</h1>
-      <?php 
-      $plats= sortMealsByPopularity($db);
-      // var_dump($plats);
-      foreach($plats as $plat){?>
-          <a href="plat_selectionne.php?id=<?=$plat['id_plat']?>" class="card rounded col-3 col-lg-2 m-3" >
-            <img class="card-img " src="assets/images_the_district/food/<?=$plat['image']?>" alt="<?$plat['libelle']?>" title="<?=$plat['libelle']?>"/>
-            <div class="card-img-overlay d-flex align-items-center justify-content-center">
-              <h5 class="mark rounded text-center" style="color=#970747"> <?=$plat['libelle']?> </h5>
-            </div> 
-          </a>
-
-      <?php } ?>
-      </div>
-      </section>
+   
 <?php
 require_once ("views/footer.php");
 ?>
