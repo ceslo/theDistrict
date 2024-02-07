@@ -86,7 +86,7 @@ require_once ("db_connect.php")
                   <p class="card-text small"><?=$suggestion['description']?></p>
                   <p class="card-text small">Prix:<?=$suggestion['prix']?>€</p>
                   <div class="d-flex justify-content-end my-3">
-                    <a class="btn btn-outline-dark" href="su$suggestion_selectionne.php?id=<?=$suggestion['id']?>">Commander</a>
+                    <a class="btn btn-outline-dark" href="plat_selectionne.php?id=<?=$suggestion['id']?>">Commander</a>
                   </div>
                 </div>
               </div>

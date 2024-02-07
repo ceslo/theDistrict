@@ -9,11 +9,11 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css"/>
 
     <title>The District</title>
   </head>
-  <body>
+  <body >
     <div class="par container-fluid">
   <?php
 require_once ("views/header.php");
@@ -85,7 +85,7 @@ require_once ("db_connect.php")
      $categories= sortCategoriesByPopularity($db); 
     // var_dump($categories);
      foreach($categories as $categorie){ ?>
-          <a href="categories.php?id=<?=$categorie['id']?>" class="card rounded col-3 col-lg-2 m-3" >
+          <a href="categories.php?id=<?=$categorie['id']?>" class="cat card rounded col-3 col-lg-2 m-3" >
             <img class="card-img " src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/>
             <div class="card-img-overlay d-flex align-items-center justify-content-center">
               <h5 class="mark rounded text-center" style="color=#970747"> <?=$categorie['libelle']?> </h5>
@@ -105,8 +105,8 @@ require_once ("db_connect.php")
       $plats= sortMealsByPopularity($db);
       // var_dump($plats);
       foreach($plats as $plat){?>
-          <a href="plat_selectionne.php?id=<?=$plat['id_plat']?>" class="card rounded col-3 col-lg-2 m-3" >
-            <img class="card-img " src="assets/images_the_district/food/<?=$plat['image']?>" alt="<?$plat['libelle']?>" title="<?=$plat['libelle']?>"/>
+          <a href="plat_selectionne.php?id=<?=$plat['id_plat']?>" class="cat card rounded col-3 col-lg-2 m-3" >
+            <img class="card-img" src="assets/images_the_district/food/<?=$plat['image']?>" alt="<?$plat['libelle']?>" title="<?=$plat['libelle']?>"/>
             <div class="card-img-overlay d-flex align-items-center justify-content-center">
               <h5 class="mark rounded text-center" style="color=#970747"> <?=$plat['libelle']?> </h5>
             </div> 

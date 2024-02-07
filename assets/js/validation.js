@@ -28,7 +28,7 @@ $(document).ready(function () {
     };
         
     if (envoi == true) {
-      $("#contact").submit()
+      $("#commande").submit()
    
     };
   };

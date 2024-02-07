@@ -45,7 +45,7 @@ return $result;
 };
 function sortCategoriesByPopularity($db)
 {
-$query= $db-> prepare("SELECT categorie.id AS 'id', categorie.libelle AS 'libelle' ,categorie.image as 'image' FROM categorie JOIN plat on categorie.id = plat.id_categorie JOIN commande ON plat.id = commande.id_plat GROUP BY categorie.id ORDER BY SUM(commande.quantite) DESC; ");
+$query= $db-> prepare("SELECT categorie.id AS 'id', categorie.libelle AS 'libelle' ,categorie.image as 'image' FROM categorie JOIN plat on categorie.id = plat.id_categorie JOIN commande ON plat.id = commande.id_plat GROUP BY categorie.id ORDER BY SUM(commande.quantite) DESC LIMIT 6 ");
 $query-> execute();
 $result=$query->fetchAll();
 return $result;

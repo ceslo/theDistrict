@@ -26,7 +26,9 @@
    $plat=getPlatById($id,$db);
   ?>
 
-  <!-- Rappel plat selectionné -->
+ 
+  <form action="commande_script.php" method="POST" id="commande">
+     <!-- Rappel plat selectionné -->
       <section class="mx-3 mt-3">
         <div class="d-flex justify-content-center">
           <div class="card rounded col-12 col-lg-8" >
@@ -43,6 +45,10 @@
                   <p class="card-title fs-4"><?=$plat['libelle']?></p>
                   <p class="card-text small"><?=$plat['description']?></p>
                   <p class="card-text small">Prix:<?=$plat['prix']?>€</p>
+                  <div class="row">
+                  <label class="col text-end " for="quantite">Quantité</label>
+                  <input class="form-control col bg-secondary container-fluid" type="number" min="1" name="quantite" value="1" step="1"/>
+                  </div>
                 </div>
               </div>
             </div>
@@ -51,7 +57,7 @@
 
       <!-- Formulaire de commande -->
         <div class="d-flex justify-content-center mt-5">
-          <form class="form col-10" action="commande_script.php" method="POST">
+          <div class="form col-10">
             <input type="text" hidden name="id" value="<?=$plat['id']?>" />
             <p>
               <label for="nom_prenom" class="form-label" >Nom et Prénom *</label>
@@ -59,51 +65,49 @@
                 class="form-control"
                 type="text"
                 name="nom_prenom"
-                id="nom_prenom"
+                id="req_nom_prenom"
                 required
               />
+              <small></small>
             </p>
+          
             <p>
               <label for="mail" class="form-label">Votre e-mail *</label>
-              <input class="form-control" type="text" name="mail" id="mail" required />
+              <input class="form-control" type="text" name="mail" id="req_mail" required />
+              <small></small>
+            </p>
+            
+
+            <p>
+              <label for="telephone" class="form-label" >Téléphone * </label
+              ><input
+                class="form-control"
+                type="text"
+                name="telephone"
+                id="req_telephone"
+                required
+              />
+              <small></small>
             </p>
 
+            <div class="row">
             <p>
               <label for="adresse" class="form-label" >Adresse * </label
               ><input
                 class="form-control"
                 type="text"
                 name="adresse"
-                id="adresse"
+                id="req_adresse"
                 required
               />
+              <small></small>
             </p>
-
-            <div class="row">
-              <p class="col">
-                <label for="CP" class="form-label">Code postal *</label
-                ><input
-                  class="form-control"
-                  type="text"
-                  name="CP"
-                  id="CP"
-                  required
-                />
-              </p>
-              <p class="col">
-                <label for="ville" class="form-label" >Ville *</label>
-                <input
-                  class="form-control"
-                  type="text"
-                  name="ville"
-                  id="ville"
-                  required
-                />
-              </p>
+              
             </div>
             <div class="d-flex justify-content-end my-3">
-              <button class="btn btn-outline-dark" type="submit">Passer la commande</button>
+              <button class="btn btn-outline-dark" type="submit" id="envoyer">Passer la commande</button>
             </div>
+          </div>
           </form>
             
         </div>
@@ -122,5 +126,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="assets/js/validationFormulaireCommande.js"></script>
   </body>
 </html>
