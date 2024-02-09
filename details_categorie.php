@@ -10,11 +10,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>The District</title>
+    <title>The District: Choix de votre plat</title>
   </head>
 
   <body>
-    <div class="container-fluid">
+    <div class=" par container-fluid">
   <?php
   require_once("db_connect.php");
   require_once ("views/header.php");
@@ -34,7 +34,7 @@
         foreach($plats as $plat)
         
         {?>
-        <div class="card rounded col-11 col-lg-5">
+        <div class="card cadre rounded col-11 col-lg-5">
             <div class="row">
                 <div class="d-flex col-4 align-items-center">
                     <img src="assets/images_the_district/food/<?=$plat['image']?>" class="img-fluid rounded" alt="<?=$plat['libelle']?>"/>

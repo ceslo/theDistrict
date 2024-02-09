@@ -1,8 +1,9 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,10 +12,10 @@
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <title>The District</title>
+    <title>The District: resultats de votre recherche</title>
   </head>
   <body>
-    <div class="par container-fluid">
+<div class="par container-fluid">
   <?php
 require_once ("views/header.php");
 require_once ("DAO.php");
@@ -60,14 +61,14 @@ require_once ("db_connect.php")
                 </div>
               </div>
             </div>
-            <div class="d-flex"></div>
-          </div>
-        </form>
+       </form>
       </section>
 
-      <section>
-      <h1 class="mt-5 text-center text-uppercase" id="titre_page">Voici les plats correspondants à votre recherche</h1>
-      <div class="row d-flex justify-content-evenly mt-5" id="aff_suggestions">
+      <section class="d-flex justify-content-center mt-5 flex-wrap">
+      <div class="cadre row  rounded mt-5 pt-3 col-8">
+      <h1 class="text-center text-uppercase" id="titre_page">Voici les plats correspondants à votre recherche</h1>
+      </div>
+      <div class="row d-flex justify-content-evenly mt-5" id="aff_suggestions">      
       <?php
     if (isset($_GET["recherche"]) AND !empty($_GET["recherche"]))
     {
@@ -75,7 +76,7 @@ require_once ("db_connect.php")
         $result=search_bar($keyword,$db); 
         foreach ($result as $suggestion)
         { ?>
-            <div class="card rounded col-12 col-lg-5 position-relative gy-2">
+            <div class="card cadre rounded col-12 col-lg-5 position-relative gy-2">
             <div class="row">
               <div class="d-flex col-4 align-items-center">
                 <img src="assets/images_the_district/food/<?=$suggestion['image']?>"class="img-fluid rounded" alt="<?= $suggestion['libelle']?>"/>

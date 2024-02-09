@@ -10,10 +10,10 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <title>The District</title>
+    <title>The District: tous les plats</title>
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="par container-fluid">
     <?php
   require_once("db_connect.php");
   require_once ("views/header.php");
@@ -21,13 +21,14 @@
   require_once ("views/search_bar.php");
   ?>
 <!-- Affichage des plats -->
-      <section>
+      <section class="d-flex justify-content-center">
+        <div class="cadre rounded d-flex justify-content-evenly flex-wrap col-xl-10 mt-5">
         <h1 class="mt-5 text-center text-uppercase" id="titre_page">Les plats</h1>
         <div class="row d-flex justify-content-evenly mt-5" id="aff_plats">
-          <?php 
+          <?php
           $plats=getPlats($db);
           foreach ($plats as $plat){?>         
-          <div class="card rounded col-12 col-lg-5 position-relative gy-2">
+          <div class="card rounded col-10 col-lg-5 position-relative gy-2">
             <div class="row">
               <div class="d-flex col-4 align-items-center">
                 <img src="assets/images_the_district/food/<?=$plat['image']?>"class="img-fluid rounded" alt="<?= $plat['libelle']?>"/>
@@ -48,8 +49,9 @@
         </div>
         
         <div>
-          <a class="btn btn-outline-dark m-3" href="index.php">Précédent</a>
+          <a class="btn btn-outline-dark m-3 " href="index.php">Précédent</a>
         </div>
+      </div>
       </section>
 
       <?php

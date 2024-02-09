@@ -12,22 +12,20 @@
     />
     <link rel="stylesheet" href="assets/css/styles.css"/>
 
-    <title>The District</title>
+    <title>The District: Passer votre commande</title>
   </head>
-  <body
-    class="parallax" style="position: relative";
-   >
-    <div class="container-fluid">
+  <body>
+    <div class="par  container-fluid">
     <?php
-   require_once("db_connect.php");
+  //  require_once("db_connect.php");
    require_once ("views/header.php");
    require_once("DAO.php");
    $id=$_GET['id'];
    $plat=getPlatById($id,$db);
   ?>
 
- 
-  <form action="commande_script.php" method="POST" id="commande">
+<div class="d-flex justify-content-center">
+  <form class="cadre rounded col-10 mt-3" action="commande_script.php" method="POST" id="commande">
      <!-- Rappel plat selectionné -->
       <section class="mx-3 mt-3">
         <div class="d-flex justify-content-center">
@@ -37,8 +35,7 @@
                 <img
                   src="assets/images_the_district/food/<?=$plat['image'] ?>"
                   class="img-fluid rounded"
-                  alt="<?=$plat['libelle']?>"
-                />
+                  alt="<?=$plat['libelle']?>"/>
               </div>
               <div class="col-7 col-sm-8">
                 <div class="card-body">
@@ -91,7 +88,7 @@
             </p>
 
             <div class="row">
-            <p>
+              <p>
               <label for="adresse" class="form-label" >Adresse * </label
               ><input
                 class="form-control"
@@ -101,17 +98,17 @@
                 required
               />
               <small></small>
-            </p>
-              
+              </p>
             </div>
-            <div class="d-flex justify-content-end my-3">
+          <div class="d-flex justify-content-end my-3">
               <button class="btn btn-outline-dark" type="submit" id="envoyer">Passer la commande</button>
-            </div>
           </div>
-          </form>
+    </div>
+  </form>
+</div>
             
-        </div>
-        <div class="m-5 p-5">
+  </div>
+  <div class="m-5 p-5">
           <a class="btn btn-outline-dark" href="plats.php">Précédent</a>
      
         </div>
@@ -119,7 +116,7 @@
       <?php
      require_once ("views/footer.php")
       ?>
-    </div>
+</div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

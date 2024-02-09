@@ -10,11 +10,11 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="assets/css/styles.css"/>
-    <title>The District</title>
+    <title>The District: Les catégories de plats</title>
   </head>
 
   <body>
-    <div class="container-fluid">
+    <div class="par container-fluid">
   <?php
   require_once("db_connect.php");
   require_once ("views/header.php");
@@ -28,22 +28,24 @@
    <section class="d-flex justify-content-center">
     <div
           id="aff_cat"
-          class="d-flex justify-content-around flex-wrap col-xl-10 mt-5 "
-        >
+          class="cadre rounded d-flex justify-content-evenly flex-wrap col-xl-10 mt-5 px-5">
+      <h1 class="text-center row mt-5">LES CATEGORIES</h1>
+      <div class="row">
         <?php
         $categories=getCategoriesActives($db);
         // var_dump($categories);
         foreach($categories as $categorie)
-        { ?>
-        <a href="details_categorie.php?id=<?=$categorie['id']?>" class="card rounded col-4 col-lg-2 m-5" >
+        { 
+        ?>
+        <a href="details_categorie.php?id=<?=$categorie['id']?>" class="cat card rounded col-4 col-lg-2 m-5" >
           <img class="card-img img-fluid" src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/> 
           <div class="card-img-overlay d-flex align-items-center justify-content-center"> 
-              <h2 class="mark rounded text-center" style="color: #970747"> <?=$categorie['libelle']?> </h2>
+            <h2 class="mark rounded text-center" style="color: #970747"> <?=$categorie['libelle']?> </h2>
           </div> 
         </a> 
         <?php } ?>
-      
-        </div>
+      </div>
+    </div>
       </section>
 
       <div class="m-md-5 p-md-5 m-2 p-2">

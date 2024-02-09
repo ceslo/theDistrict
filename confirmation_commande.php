@@ -11,16 +11,16 @@
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <title>The District</title>
+    <title>The District: confirmation de votre commande</title>
   </head>
   <body>
-    
+    <div class="">
   <?php
 require_once ("views/header.php");
 require_once ("DAO.php");
 require_once ("db_connect.php")
   ?>
-<section class="">
+<section>
     <h1 class="text-center my-5 d-flex justify-content-center"> Votre commande est confirmée!</h1>
     <h3 class="text-center"> Vous recevrez bientôt un e-mail de confirmation </h3>
     <h3></h3>
@@ -33,7 +33,7 @@ require_once ("db_connect.php")
 require_once ("views/footer.php");
 ?>
    
-
+   </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

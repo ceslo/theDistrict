@@ -1,4 +1,5 @@
 <footer class="p-5 mt-5 d-flex justify-content-evenly">
+  <div>
         <button class="btn btn-primary" href="#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +45,14 @@
           </svg>
           TikTok
         </button>
-      </footer>
-    </div>
+      </div>
+      <div>
+        <a class="link m-3" href="mention_legales.php">Mentions Légales</a>
+        <a class="link m-3" href="politique_confidentialite.php">Politique de confidentialité</a>
+        
+      </div>
+    </footer>
+  </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

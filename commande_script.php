@@ -27,6 +27,7 @@ $adresse_client=$_POST['adresse'];
 $date_commande= new DateTime('now');
 $date= $date_commande->format("Y-m-d H:h:i");
 
+//Ajout etat de la commande (ici en preparation par défaut)
 $etat="en preparation";
 
                                     // INSERTION DE LA COMMANDE DANS LA BASE DE DONNEES
@@ -129,4 +130,4 @@ if($mail)
 
      echo "L'envoi de mail a echoué. L'erreur suivante s'est produite : ", $mail->ErrorInfo;
     }
-};        
+};

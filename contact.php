@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="assets/css/styles.css"/>
 
-    <title>The District</title>
+    <title>The District:Nous contacter</title>
   </head>
   <body>
     <div class="container-fluid">

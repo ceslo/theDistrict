@@ -2,18 +2,25 @@ header {
   background-color: #970747;
   font-style: normal;
 }
-
-body {
+body{
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   background-color:#f9ce90;
-  background-image: url("assets/images_the_district/image_parallax.jpg");
+}
+.par {
+  
+  background-image: url("/assets/images_the_district/image_parallax.jpg");
   background-attachment:fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover; 
+  background-size: cover;
+  
+}
+.cadre{
+  background-color:#f9ce90;
+  
 }
 
-#bandeau {
+#bandeau { 
   background-color: #970747;
 }
 

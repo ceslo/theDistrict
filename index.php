@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The District est un restaurant proposant des plats de brasserie, avec la possibilité de commander en ligne">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,14 +12,14 @@
     />
     <link rel="stylesheet" href="assets/css/styles.css"/>
 
-    <title>The District</title>
+    <title>The District: Accueil</title>
   </head>
   <body >
     <div class="par container-fluid">
   <?php
 require_once ("views/header.php");
 require_once ("DAO.php");
-require_once ("db_connect.php")
+// require_once ("db_connect.php")
   ?>
 
   <!-- Affichage de la barre de recherche -->
@@ -79,14 +80,14 @@ require_once ("db_connect.php")
 
     <!-- Affichage categories populaires -->
       <section class="d-flex wrap justify-content-center">       
-        <div class="d-flex justify-content-evenly col-xl-10 row mt-5">
-        <h1 class="text-center row mt-5">Catégories populaires</h1>
+        <div class="cadre rounded d-flex justify-content-evenly col-xl-10 mt-5 row">
+        <h1 class="text-center row mt-2">Catégories populaires</h1>
      <?php 
      $categories= sortCategoriesByPopularity($db); 
     // var_dump($categories);
      foreach($categories as $categorie){ ?>
-          <a href="categories.php?id=<?=$categorie['id']?>" class="cat card rounded col-3 col-lg-2 m-3" >
-            <img class="card-img " src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/>
+          <a href="categories.php?id=<?=$categorie['id']?>" class="cat card col-3 col-lg-2 mt-3 mb-5" >
+            <img class="card-img img-fluid" src="assets/images_the_district/category/<?=$categorie['image']?>" alt="<?$categorie['libelle']?>" title="<?=$categorie['libelle']?>"/>
             <div class="card-img-overlay d-flex align-items-center justify-content-center">
               <h5 class="mark rounded text-center" style="color=#970747"> <?=$categorie['libelle']?> </h5>
             </div> 
@@ -99,13 +100,13 @@ require_once ("db_connect.php")
       <!-- Affichage plats populaires -->
       <section class="d-flex justify-content-center">
         
-      <div class="d-flex justify-content-evenly col-xl-10 row mt-5">
-      <h1 class="text-center row mt-5">Plats populaires</h1>
+      <div class=" cadre rounded d-flex justify-content-evenly col-xl-10 row mt-5">
+      <h1 class="text-center row mt-2">Plats populaires</h1>
       <?php 
       $plats= sortMealsByPopularity($db);
       // var_dump($plats);
       foreach($plats as $plat){?>
-          <a href="plat_selectionne.php?id=<?=$plat['id_plat']?>" class="cat card rounded col-3 col-lg-2 m-3" >
+          <a href="plat_selectionne.php?id=<?=$plat['id_plat']?>" class="cat card rounded col-3 col-lg-2 mt-3 mb-5" >
             <img class="card-img" src="assets/images_the_district/food/<?=$plat['image']?>" alt="<?$plat['libelle']?>" title="<?=$plat['libelle']?>"/>
             <div class="card-img-overlay d-flex align-items-center justify-content-center">
               <h5 class="mark rounded text-center" style="color=#970747"> <?=$plat['libelle']?> </h5>
@@ -128,4 +129,4 @@ require_once ("views/footer.php");
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/pages.js"></script>
   </body>
-</html>
+</html> 
