@@ -25,7 +25,7 @@
   ?>
 
 <div class="d-flex justify-content-center">
-  <form class="cadre rounded col-10 mt-3" action="commande_script.php" method="POST" id="commande">
+  <form class="cadre rounded col-10 mt-3" action="commande_script.php" name="commande" method="POST" id="commande">
      <!-- Rappel plat selectionné -->
       <section class="mx-3 mt-3">
         <div class="d-flex justify-content-center">
@@ -63,15 +63,15 @@
                 type="text"
                 name="nom_prenom"
                 id="req_nom_prenom"
-                required
+               
               />
-              <small></small>
+              <small id="er_nom_prenom"></small>
             </p>
           
             <p>
               <label for="mail" class="form-label">Votre e-mail *</label>
-              <input class="form-control" type="text" name="mail" id="req_mail" required />
-              <small></small>
+              <input class="form-control" type="text" name="mail" id="req_mail" />
+              <small id="er_mail"></small>
             </p>
             
 
@@ -82,9 +82,9 @@
                 type="text"
                 name="telephone"
                 id="req_telephone"
-                required
+      
               />
-              <small></small>
+              <small id="er_telephone"></small>
             </p>
 
             <div class="row">
@@ -95,9 +95,9 @@
                 type="text"
                 name="adresse"
                 id="req_adresse"
-                required
+              
               />
-              <small></small>
+              <small id="er_adresse"></small>
               </p>
             </div>
           <div class="d-flex justify-content-end my-3">
@@ -117,12 +117,12 @@
      require_once ("views/footer.php")
       ?>
 </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="assets/js/validationFormulaireCommande.js"></script>
   </body>
 </html>

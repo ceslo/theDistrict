@@ -1,12 +1,14 @@
 <?php
-
+// session_start();
 use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 require_once ("DAO.php");
 require_once ("db_connect.php");
 require_once("vendor/autoload.php");
 
-                                         // RECUPERATION DES INFO DE LA COMMANDE
+
+                              // RECUPERATION DES INFO DE LA COMMANDE
 
 // Récupération des informations du plat selectionné
 $id= $_POST['id'];
@@ -30,21 +32,48 @@ $date= $date_commande->format("Y-m-d H:h:i");
 //Ajout etat de la commande (ici en preparation par défaut)
 $etat="en preparation";
 
-                                    // INSERTION DE LA COMMANDE DANS LA BASE DE DONNEES
-$query= "INSERT INTO commande (id_plat, quantite, total, date_commande, etat, nom_client, telephone_client, email_client, adresse_client) VALUES (:id, :quantite, :total,:date, :etat, :nom_client, :telephone, :mail, :adresse)";
 
-$add= $db->prepare($query);
-$add-> bindParam(":id",$id);
-$add-> bindParam(":quantite",$quantite);
-$add-> bindParam(":total",$total);
-$add-> bindParam(":date",$date);
-$add-> bindParam(":etat",$etat);
-$add-> bindParam(":nom_client",$nom_prenom);
-$add-> bindParam(":telephone",$telephone);
-$add-> bindParam(":mail",$mail_client);
-$add-> bindParam(":adresse",$adresse_client);
+                            // VERIFICATION DES INFO TRANSMISES
+function valid_info($info)
+{
+//   $info=trim($info);
+  $info=stripslashes($info);
+  $info=htmlspecialchars($info);
+  return $info;  
+};
+$nom_prenom= valid_info($nom_prenom);
+$mail_client=valid_info($mail_client);
+$telephone=valid_info($telephone);
+$adresse_client=valid_info($adresse_client);
+
+
+              // FONCTION D'INSERTION DE LA COMMANDE DANS LA BASE DE DONNEES
+  $query= "INSERT INTO commande (id_plat, quantite, total, date_commande, etat, nom_client, telephone_client, email_client, adresse_client) VALUES (:id, :quantite, :total,:date, :etat, :nom_client, :telephone, :mail, :adresse)";
+
+  $add= $db->prepare($query);
+
+  $add-> bindParam(":id",$id);
+  $add-> bindParam(":quantite",$quantite);
+  $add-> bindParam(":total",$total);
+  $add-> bindParam(":date",$date);
+  $add-> bindParam(":etat",$etat);
+  $add-> bindParam(":nom_client",$nom_prenom);
+  $add-> bindParam(":telephone",$telephone);
+  $add-> bindParam(":mail",$mail_client);
+  $add-> bindParam(":adresse",$adresse_client);
                                     
-$add-> execute();
+                // Verification et insertion dans la base de données
+  if (!empty($nom_prenom) && preg_match("/[A-Za-z\-]+\s[A-Za-z\-]+/",$nom_prenom)
+  && !empty($mail_client) && filter_var($mail_client,FILTER_VALIDATE_EMAIL)
+  && !empty($telephone) && preg_match("/^[0-9]{10}+$/",$telephone)
+  && !empty($adresse_client) && preg_match("/[A-Za-z0-9]+/",$adresse_client))
+  { 
+    $add->execute();
+  }
+                   // Message d'erreur si données non valides
+  else { 
+        echo "La commande n'a pas pu être envoyée";
+  };                           
                                     
 
 // Creation d'un tableau contenant les informations de la commande pour la base de données

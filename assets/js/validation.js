@@ -12,7 +12,7 @@ $(document).ready(function () {
       $(er_small).addClass("text-danger mt-0 pt-0 mb-3");
      
      }
-      else {envoi==true}
+      
     });
 
     if ($("#traitement_info").is(":not(:checked)")) {
